@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAyTka8vTeUU2kgvgyNh/1MAAAAAACAAAAAAAQZgAAAAEAACAAAAAvEava8Wc25yl4aMVxDQNEuYrkk7GPKMrQnNXFGCo61QAAAAAOgAAAAAIAACAAAACVM22LrsXpDNBP7YNR4ZwPqeE+Mlwgf5GRQrgJNhNq24AAAAADG4oJEBNr7liDgX6tcijlqaQjMHO6tCDGUR8Tl75J3LKtxQ/yMvONJfqhEVbPbA8QbZCwvbNue0wffLmiWDiYrhYAFeedwkL0bafPeDrYuRxvl/PwZovOEcafw4FRbxMUdcqq/s7ScKydZGZP1hXLP+m2N+SoJok2zIDN5C53bUAAAAAn2AN1QN8P/l6cajIVSIjKAbRKcf53EwUwdW6U+GGaBY9Hxonu84jBZ4d5sswhpUllHk6ut2L6/SZlTMtbWES1</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:myazurtestdbserver.database.windows.net,1433%3bInitial Catalog=MyAzurTest_db%3bUser Id=adminuser%40myazurtestdbserver%3bPassword=arsalan2017!%40#</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="MyAzurTest.Data.ApplicationDBContext">
+      <Value>Data Source=tcp:myazurtestdbserver.database.windows.net,1433%3bInitial Catalog=MyAzurTest_db%3bUser Id=adminuser%40myazurtestdbserver%3bPassword=arsalan2017!%40#</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

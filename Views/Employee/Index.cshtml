@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MyAzurTest.Models.EmployeeModel>
+@{
+    ViewData["Title"] = "Employee Page";
+}
+
+<h2>All Employees</h2>
+<a asp-action="AddEmployee" class="btn btn-sm btn-primary">Add Employee</a>
+<a asp-action="GetEmployee" class="btn btn-sm btn-secondary">Get Employee</a>
+
+@if (Model.Count() > 0)
+{
+
+
+
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>lastName</th>
+                <th>Update</th>
+                <th>Delete</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (MyAzurTest.Models.EmployeeModel cat in Model)
+            {
+                <tr>
+                    <td>@cat.id</td>
+                    <td>@cat.name</td>
+                    <td>@cat.lastName</td>
+
+                    <td>
+
+                        <a asp-controller="Employee" asp-action="Edit" asp-route-ID="@cat.id"><i class="fas fa-edit"></i></a>
+                    </td>
+                    <td>
+                        <form asp-action="DeleteEmployee" method="post">
+                            <input type="hidden" value="@cat.id" name="EmployeeID" />
+
+                            <button type="submit" class="btn btn-sm btn-primary"><i class="fas fa-trash-alt"></i></button>
+                        </form>
+                    </td>
+                    <td>
+
+                        <a asp-controller="Employee" asp-action="AddFile" asp-route-ID="@cat.id"><i class="fas fa-image"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
