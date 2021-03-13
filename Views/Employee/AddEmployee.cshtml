@@ -1,8 +1,10 @@
-﻿@model Rocky.Models.EmployeeModel
+﻿@model MyAzurTest.Models.EmployeeModel
 @{ Layout = "_Layout"; ViewBag.Title = "Add a Reservation";}
 
 <h2>Add a Employee <a asp-action="Index" class="btn btn-sm btn-secondary">Back</a></h2>
 <form asp-action="AddEmployee" method="post">
+
+   
     <div class="form-group">
         <label for="Name">Name:</label>
         <input class="form-control" name="Name" />

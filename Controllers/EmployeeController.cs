@@ -21,6 +21,22 @@ namespace MyAzurTest.Controllers
             return View(Emp);
         }
 
-      
+        [HttpGet]
+        public IActionResult AddEmployee()
+        {
+            EmployeeModel Employ = new EmployeeModel();
+            return View(Employ);
+        }
+
+        [HttpPost]
+        public IActionResult AddEmployee(EmployeeModel Employ)
+        {
+            Employ.id = myContext.Employee.Max(x => x.id)+1;
+
+            myContext.Employee.Add(Employ);
+            myContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }
